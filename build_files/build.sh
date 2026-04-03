@@ -13,10 +13,8 @@ set -ouex pipefail
 dnf5 install -y steam steam-devices
 
 # this removes unwanted software
-dnf5 remove -y waydroid Sunshine 
+dnf5 remove -y Sunshine 
 
-# this removes packages installed as dependencies that are no longer needed
-dnf5 autoremove -y
 
 # Use a COPR Example:
 #
