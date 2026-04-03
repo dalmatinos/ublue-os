@@ -9,9 +9,8 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 # Steam
-dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-steam.repo
-dnf5 install -y steam
-rm -rf /etc/yum.repos.d/fedora-steam.repo
+dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf install -y steam 
 
 # this installs a package from fedora repos
 dnf5 install -y alacritty
