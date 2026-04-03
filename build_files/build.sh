@@ -8,9 +8,13 @@ set -ouex pipefail
 # RPMfusion repos are available by default in ublue main images
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
+# Steam
+dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-steam.repo
+dnf5 install -y steam
+rm -rf /etc/yum.repos.d/fedora-steam.repo
 
 # this installs a package from fedora repos
-dnf5 install -y steam steam-devices
+dnf5 install -y alacritty
 
 # this removes unwanted software
 dnf5 remove -y Sunshine 
