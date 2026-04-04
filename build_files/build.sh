@@ -10,11 +10,11 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # docker install
-dnf -y -q --setopt=install_weak_deps=False install dnf-plugins-core
-dnf5 config-manager addrepo --overwrite --save-filename=docker-ce.repo --from-repofile='https://download.docker.com/linux/fedora/docker-ce.repo'
-dnf makecache
-dnf -y -q --best install docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-ce-rootless-extras docker-buildx-plugin docker-model-plugin
-systemctl enable --now docker.service
+# dnf -y -q --setopt=install_weak_deps=False install dnf-plugins-core
+# dnf5 config-manager addrepo --overwrite --save-filename=docker-ce.repo --from-repofile='https://download.docker.com/linux/fedora/docker-ce.repo'
+# dnf makecache
+# dnf -y -q --best install docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-ce-rootless-extras docker-buildx-plugin docker-model-plugin
+# systemctl enable --now docker.service
 
 # this installs a package from fedora repos
 dnf5 install -y alacritty 
