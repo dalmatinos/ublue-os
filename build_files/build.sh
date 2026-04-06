@@ -16,11 +16,24 @@ set -ouex pipefail
 # dnf -y -q --best install docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-ce-rootless-extras docker-buildx-plugin docker-model-plugin
 # systemctl enable --now docker.service
 
+# Add rpmfusion repo
+sudo dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# Install Virtualbox
+sudo dnf5 install -y VirtualBox akmod-VirtualBox
+usermod -aG vboxusers $USER -y
+
+
 # this installs a package from fedora repos
 dnf5 install -y alacritty \
-                podman-docker
+                podman-docker 
+
 # this removes unwanted software
 dnf5 remove -y Sunshine 
+
+# Clean unecessary dependencies
+dnf5 autoremove -y
 
 
 # Use a COPR Example:
