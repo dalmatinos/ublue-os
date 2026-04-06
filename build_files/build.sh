@@ -20,16 +20,7 @@ set -ouex pipefail
 sudo dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-# Install Virtualbox
-sudo dnf5 install -y dnf install VirtualBox
-    akmods
-    systemctl restart vboxdrv
-    lsmod  | grep -i vbox
-
-
-
-
-# this installs a package from fedora repos
+# this installs a package from fedora and rpmfusion repos
 dnf5 install -y alacritty \
                 podman-docker 
 
