@@ -21,10 +21,13 @@ set -ouex pipefail
 sudo dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+
+
 # this installs a package from fedora and rpmfusion repos
 dnf5 install -y alacritty \
                 podman-docker \
-                akmod-VirtualBox VirtualBox\
+                kernel-devel-6.1 kernel-headers-6.1 \
+                VirtualBox akmod-VirtualBox \
 
 # this removes unwanted software
 dnf5 remove -y Sunshine 
