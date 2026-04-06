@@ -22,13 +22,13 @@ sudo dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-re
 sudo dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # Install akmods og kernel headers
-dnf5 install -y akmods
+# dnf5 install -y akmods
 
 
 # this installs a package from fedora and rpmfusion repos
 dnf5 install -y alacritty \
                 podman-docker \
-                VirtualBox akmod-VirtualBox \
+                
 
 # this removes unwanted software
 dnf5 remove -y Sunshine 
