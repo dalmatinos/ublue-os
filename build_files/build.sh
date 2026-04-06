@@ -21,7 +21,10 @@ sudo dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-re
 sudo dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # Install Virtualbox
-sudo dnf5 install -y virtualbox
+sudo dnf5 install -y dnf install VirtualBox
+    akmods
+    systemctl restart vboxdrv
+    lsmod  | grep -i vbox
 
 
 
