@@ -26,8 +26,7 @@ sudo dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonf
 
 
 # this installs a package from fedora and rpmfusion repos
-dnf5 install -y alacritty \
-                podman-docker \
+dnf5 install -y alacritty 
                 
 
 # this removes unwanted software
