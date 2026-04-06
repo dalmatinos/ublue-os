@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 set -ouex pipefail
@@ -22,7 +23,8 @@ sudo dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonf
 
 # this installs a package from fedora and rpmfusion repos
 dnf5 install -y alacritty \
-                podman-docker 
+                podman-docker \
+                akmod-VirtualBox VirtualBox\
 
 # this removes unwanted software
 dnf5 remove -y Sunshine 
