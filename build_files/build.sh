@@ -26,7 +26,7 @@ sudo dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonf
 
 
 # this installs a package from fedora and rpmfusion repos
-dnf5 install -y alacritty 
+dnf5 install -y alacritty steam
                 
 
 # this removes unwanted software
